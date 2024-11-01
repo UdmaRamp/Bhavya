@@ -14,15 +14,28 @@
             font-family: Arial, sans-serif;
             font-size: 24px;
         }
+        
+        /* Loading dots animation */
+        .dots::after {
+            content: '';
+            animation: dots 1s steps(3, end) infinite;
+        }
+        
+        @keyframes dots {
+            0% { content: ''; }
+            33% { content: '.'; }
+            66% { content: '..'; }
+            100% { content: '...'; }
+        }
     </style>
     <script>
-        // JavaScript function to redirect after 3 seconds
+        // Redirect to new page after 3 seconds
         setTimeout(function() {
             window.location.href = "/Bhavya/newIndex.html";
-        }, 3000); // 2500 milliseconds = 3 seconds
+        }, 3000); // 3000 milliseconds = 3 seconds
     </script>
 </head>
 <body>
-    <p>Hai! Wait for some time...</p>
+    <p>Something special loading..<span class="dots"></span></p>
 </body>
 </html>
